@@ -4,7 +4,7 @@
 
 ## Arsh Goyal's DSA Sheet : [link](https://docs.google.com/spreadsheets/d/1_W5frvfC_dwlwIWayRa1tb3Qs28LlqIkMceh3MUUprY/edit?usp=sharing)
 
-## 450DSA : [link](https://docs.google.com/spreadsheets/d/1jGU5VDkxEtUm7bss15Xh8ZlYB8HgvfI6/edit?usp=sharing&ouid=112936681679557034001&rtpof=true&sd=true)
+## 450DSA : [link](https://docs.google.com/spreadsheets/d/1MFqU5w9nWdfoZgBM-BfLND9cJOFKnaoawo-ciEg9krw/edit?usp=sharing)
 
 ## running instructions
 
