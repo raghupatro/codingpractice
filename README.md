@@ -14,3 +14,7 @@
 - uses input.txt and output.txt files as input and output respectively, unless run on an online judge
 - change path to those files, as required on your pc
 - my personal template, will make changes as required
+
+## about the solutions
+
+- _most solutions just needed an implementation of a particular function, only check the required functions in the uploaded solution, as the driver code isn't implemented._
