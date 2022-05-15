@@ -34,6 +34,6 @@ int main()
         cin >> i;
         nums.push_back(i);
     }
-    cout << sortColors(nums) << endl;
+    sortColors(nums);
     return 0;
 }
