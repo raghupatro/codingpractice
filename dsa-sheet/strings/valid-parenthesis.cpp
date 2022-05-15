@@ -2,17 +2,8 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-int findDuplicate(vector<int> &nums)
+void solve()
 {
-    unordered_set<int> s;
-    for (int &i : nums)
-    {
-        if (s.find(i) == s.end())
-            s.insert(i);
-        else
-            return i;
-    }
-    return 1;
 }
 int main()
 {
@@ -24,13 +15,11 @@ int main()
     freopen("d:\\cp\\codingpractice\\output.txt", "w", stdout);
 #endif
 
-    vector<int> nums;
-    while (cin)
+    ll test = 1;
+    cin >> test;
+    while (test--)
     {
-        int i = 0;
-        cin >> i;
-        nums.push_back(i);
+        solve();
     }
-    cout << findDuplicate(nums) << endl;
     return 0;
 }
