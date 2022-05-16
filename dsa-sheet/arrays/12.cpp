@@ -2,24 +2,18 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-int maxProfit(vector<int> &prices)
+int maxArea(vector<int> &height)
 {
-    int min = prices[0], max = prices[0], res = 0;
-    // 7 1 5 3 6 4
-    for (int &i : prices)
+    int maxArea = 0;
+
+    for (int i = 0; i < height.size(); ++i)
     {
-        if (i < max)
+        for (int j = i + 1; j < height.size(); ++j)
         {
-            res += (max - min);
-            min = i;
-            max = i;
-        }
-        if (i >= max)
-        {
-            max = i;
+            maxArea = max(maxArea, (min(height[j], height[i]) * abs(i - j)));
         }
     }
-    return res;
+    return maxArea;
 }
 int main()
 {
@@ -38,6 +32,6 @@ int main()
         cin >> i;
         nums.push_back(i);
     }
-    cout << maxProfit(nums) << endl;
+    cout << maxArea(nums) << endl;
     return 0;
 }

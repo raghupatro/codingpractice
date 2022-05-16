@@ -2,24 +2,18 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-int maxProfit(vector<int> &prices)
+vector<int> findDuplicate(vector<int> &nums)
 {
-    int min = prices[0], max = prices[0], res = 0;
-    // 7 1 5 3 6 4
-    for (int &i : prices)
+    unordered_set<int> s;
+    vector<int> v;
+    for (int &i : nums)
     {
-        if (i < max)
-        {
-            res += (max - min);
-            min = i;
-            max = i;
-        }
-        if (i >= max)
-        {
-            max = i;
-        }
+        if (s.find(i) == s.end())
+            s.insert(i);
+        else
+            v.push_back(i);
     }
-    return res;
+    return v;
 }
 int main()
 {
@@ -38,6 +32,9 @@ int main()
         cin >> i;
         nums.push_back(i);
     }
-    cout << maxProfit(nums) << endl;
+    for (int &i : findDuplicate(nums))
+    {
+        cout << i << "\t";
+    }
     return 0;
 }
