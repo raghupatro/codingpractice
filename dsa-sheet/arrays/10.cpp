@@ -2,24 +2,21 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-int findSum(vector<int> &nums, int i, int j)
+int findSum(vector<int> &nums, int p, int q)
 {
     int sum = 0;
-    for (int p = i; p < i + j; ++p)
+    for (int i = p; i <= q; ++i)
     {
         sum += nums[i];
     }
-    return sum;
+    return abs(sum);
 }
 int subarraysDivByK(vector<int> &nums, int k)
 {
-    // int temp[] = {0};
-    // int *temp = &nums[0];
-
     int count = 0;
     for (int i = 0; i < nums.size(); ++i)
     {
-        for (int j = 0; j < nums.size() - i; ++j)
+        for (int j = i; j < nums.size(); ++j)
         {
             if (findSum(nums, i, j) % k == 0)
                 count++;
@@ -37,15 +34,16 @@ int main()
     freopen("d:\\cp\\codingpractice\\output.txt", "w", stdout);
 #endif
 
-    vector<int> nums;
-    int k = 0;
-    cin >> k;
-    while (cin)
-    {
-        int i = 0;
-        cin >> i;
-        nums.push_back(i);
-    }
+    // 4, 5, 0, -2, -3, 1
+    vector<int> nums{4, 5, 0, -2, -3, 1};
+    int k = 5;
+    // cin >> k;
+    // while (cin)
+    // {
+    //     int i = 0;
+    //     cin >> i;
+    //     nums.push_back(i);
+    // }
 
     cout << subarraysDivByK(nums, k) << endl;
     return 0;
