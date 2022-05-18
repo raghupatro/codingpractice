@@ -37,17 +37,16 @@ int main()
 #endif
 
     vector<int> nums;
+    int i = 0;
     // there is some error with this driver code, it automatically takes an extra "0" in input array
-    while (cin)
+    while (cin >> i)
     {
-        int i = 0;
-        cin >> i;
         nums.push_back(i);
     }
-    // for (int i = 0; i < nums.size(); ++i)
-    // {
-    //     cout << '"' << nums[i] << '"' << "\t";
-    // }
+    for (int i = 0; i < nums.size(); i++)
+    {
+        cout << '"' << nums[i] << '"' << "\t";
+    }
     cout << maxProfit(nums) << endl;
     return 0;
 }
