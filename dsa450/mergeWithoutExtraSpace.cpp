@@ -5,6 +5,7 @@ using namespace std;
 void merge(int arr1[], int arr2[], int n, int m)
 {
     // code here
+    // heap sort lagana hai...
 }
 int main()
 {
