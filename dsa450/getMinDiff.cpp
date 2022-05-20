@@ -5,15 +5,17 @@ using namespace std;
 int getMinDiff(int arr[], int n, int k)
 {
     // code here
-    int minDiff = INT_MAX;
+    int minDiff = INT_MIN;
     sort(arr, arr + n);
     int lo = 0, hi = n - 1;
     while (hi > lo)
     {
-        int currVal = arr[hi] - arr[lo] - k - k;
-        if (currVal < 0)
-            currVal = INT_MAX;
-        if (currVal < minDiff)
+        int currVal = arr[hi] - arr[lo];
+        if (arr[hi] - k > 0)
+        {
+            currVal = min(currVal, abs(arr[hi] - arr[lo] - k - k));
+        }
+        if (currVal > minDiff)
         {
             minDiff = currVal;
         }
@@ -33,6 +35,7 @@ int main()
 #endif
 
     int a[] = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
+    // int a[] = {3, 9, 12, 16, 20};
     cout << getMinDiff(a, 10, 5);
     return 0;
 }
