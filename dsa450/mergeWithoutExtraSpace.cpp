@@ -4,8 +4,24 @@ using namespace std;
 #define mod 1000000007
 void merge(int arr1[], int arr2[], int n, int m)
 {
-    // code here
-    // heap sort lagana hai...
+    sort(arr1, arr1 + n, greater<int>());
+    sort(arr2, arr2 + m);
+    int i = 0;
+    int j = 0;
+    while (i < n and j < m)
+    {
+        if (arr1[i] > arr2[j])
+        {
+            swap(arr1[i], arr2[j]);
+            i++;
+            j++;
+            continue;
+        }
+        else
+            i++;
+    }
+    sort(arr1, arr1 + n);
+    sort(arr2, arr2 + m);
 }
 int main()
 {
