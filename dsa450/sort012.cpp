@@ -11,13 +11,13 @@ void swap(vector<int> &a, int i, int j)
 void sort012(vector<int> &a, int n)
 {
     int lo = 0, hi = n - 1, curr = 0;
-    while (curr < hi)
+    while (curr <= hi)
     {
         switch (a[curr])
         {
         case 0:
             swap(a, curr, lo);
-            // curr++;
+            curr++;
             lo++;
             break;
         case 1:
@@ -27,6 +27,7 @@ void sort012(vector<int> &a, int n)
             swap(a, curr, hi);
             // curr++;
             hi--;
+            break;
         }
     }
 }

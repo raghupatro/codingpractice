@@ -5,24 +5,23 @@ using namespace std;
 int getMinDiff(int arr[], int n, int k)
 {
     // code here
-    int minDiff = INT_MIN;
+
     sort(arr, arr + n);
-    int lo = 0, hi = n - 1;
-    while (hi > lo)
+    int maxH = arr[n - 1];
+    int minH = arr[0];
+    int res = maxH - minH;
+    for (int i = 1; i < n; i++)
     {
-        int currVal = arr[hi] - arr[lo];
-        if (arr[hi] - k > 0)
-        {
-            currVal = min(currVal, abs(arr[hi] - arr[lo] - k - k));
-        }
-        if (currVal > minDiff)
-        {
-            minDiff = currVal;
-        }
-        hi--;
-        lo++;
+
+        maxH = max(arr[n - 1] - k, arr[i - 1] + k);
+        minH = min(arr[0] + k, arr[i] - k);
+
+        if (minH < 0)
+            continue;
+
+        res = min(res, maxH - minH);
     }
-    return minDiff;
+    return res;
 }
 int main()
 {
@@ -36,6 +35,6 @@ int main()
 
     int a[] = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
     // int a[] = {3, 9, 12, 16, 20};
-    cout << getMinDiff(a, 10, 5);
+    cout << getMinDiff(a, 10, 3);
     return 0;
 }
