@@ -33,11 +33,5 @@ int main()
     freopen("d:\\cp\\codingpractice\\output.txt", "w", stdout);
 #endif
 
-    ll test = 1;
-    cin >> test;
-    while (test--)
-    {
-        solve();
-    }
-    return 0;
+        return 0;
 }
