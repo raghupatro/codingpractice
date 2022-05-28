@@ -2,56 +2,7 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-vector<int> spirallyTraverse1(vector<vector<int>> m, int ri, int c)
-{
-    int u = -1, r = c, d = ri, l = -1;
-    int i = 0, j = 0;
-    vector<int> res;
 
-    // outer loop
-
-    while (j < r and i < d and j > l and i > u)
-    {
-        // go right
-        for (; i != u and j < r; ++j)
-        {
-            res.push_back(m[i][j]);
-        }
-        u = i;
-        j--;
-        i++;
-
-        // go down
-        for (; j != r and i < d; ++i)
-        {
-            res.push_back(m[i][j]);
-        }
-        i--;
-        r = j;
-
-        j--;
-        // go left
-        for (; i != d and j > l; --j)
-        {
-            res.push_back(m[i][j]);
-        }
-        j++;
-
-        d = i;
-        i--;
-        // go up
-        for (; j != l and i > u; i--)
-        {
-            res.push_back(m[i][j]);
-        }
-        i++;
-        l = j;
-        j++;
-    }
-    res.pop_back();
-
-    return res;
-}
 vector<int> spirallyTraverse(vector<vector<int>> matrix, int r, int c)
 {
     vector<int> ans;
