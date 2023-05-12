@@ -2,7 +2,9 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-
+void solve()
+{
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -12,7 +14,12 @@ int main()
     freopen("d:\\cp\\codingpractice\\input.txt", "r", stdin);
     freopen("d:\\cp\\codingpractice\\output.txt", "w", stdout);
 #endif
-    string s = "00b";
-    cout << stoi(s, 0, 16);
+
+    ll test = 1;
+    cin >> test;
+    while (test--)
+    {
+        solve();
+    }
     return 0;
 }
